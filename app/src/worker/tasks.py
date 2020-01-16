@@ -50,8 +50,8 @@ def calculate_sentiment_for_response(self, response_uuid):
                 )
                 sentiment = sentiment_response.document_sentiment
 
-                response_json[key + "_sentimentScore"] = sentiment.score
-                response_json[key + "_magnitudeScore"] = sentiment.magnitude
+                response_json[key + "_sentimentScore"] = float(sentiment.score)
+                response_json[key + "_magnitudeScore"] = float(sentiment.magnitude)
                 response_json[key + "_language"] = sentiment_response.language
 
         session = get_db()
