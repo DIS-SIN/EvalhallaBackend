@@ -23,7 +23,7 @@ def surveyResponse_response(response, surveyName):
     if isinstance(response, list):
         response_array = []
         for res in response:
-            response_dict = res.response
+            response_dict = dict(res.response)
             response_dict["uuid"] = res.uuid
             response_dict["createdOn"] = res.createdOn.isoformat()
             response_dict["surveyName"] = surveyName
@@ -31,7 +31,7 @@ def surveyResponse_response(response, surveyName):
         
         return response_array
     
-    response_dict = response.response
+    response_dict = dict(response.response)
     response_dict["uuid"] = response.uuid
     response_dict["createdOn"] = response.createdOn.isoformat()
     response_dict["surveyName"] = surveyName
