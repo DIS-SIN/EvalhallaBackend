@@ -18,7 +18,6 @@ def create_app(env="production") -> Flask:
     print(env)    
     app.config.from_mapping(load_application_variables(env))
     # depending on environment load the correct configuration
-    
     CORS(app)
 
     app.config["DATABASE_URI"] = generate_database_uri(**app.config)
