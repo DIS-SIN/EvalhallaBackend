@@ -21,7 +21,7 @@ rabbitmqctl set_permissions -p ${EVALHALLA_AMQP_VHOST} ${EVALHALLA_AMQP_USER} ".
 
 if [ "$EVALHALLA_USE_SENTIMENT" == "True" ]
 then 
-   doc2unix configs/credentials/credentials.json
+   dos2unix configs/credentials/credentials.json
    mkdir /etc/credentials
    mv configs/credentials/credentials.json /etc/credentials
 fi 
